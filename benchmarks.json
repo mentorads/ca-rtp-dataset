@@ -1,0 +1,81 @@
+{
+  "$schema": "https://monteclar.com/schemas/igaming-benchmarks-v1.json",
+  "dataset_name": "Canada Online Casino RTP & Payment Rails Index",
+  "jurisdiction": "CA",
+  "year": 2026,
+  "citation_contract": "Strict digit verification under Monteclar CITATIONS.md protocol",
+  "canonical_hub": "https://monteclar.com/en-CA/best-casinos/canada",
+  "operators": [
+    {
+      "brand": "IceCasino",
+      "slug": "ice-casino",
+      "network": "V.Partners",
+      "target_geos": ["CA", "CA-ON"],
+      "ontario_targeting_status": "Partner geo list confirmed; offshore operation",
+      "interac_supported": true,
+      "payout_window_hours": "12-24",
+      "primary_vertical": "Slots, Live Dealer, Table Games",
+      "review_endpoint": "https://monteclar.com/en-CA/casinos/ice-casino"
+    },
+    {
+      "brand": "VerdeCasino",
+      "slug": "verde-casino",
+      "network": "V.Partners",
+      "target_geos": ["CA", "CA-ON"],
+      "ontario_targeting_status": "Partner geo list confirmed; offshore operation",
+      "interac_supported": true,
+      "payout_window_hours": "24-48",
+      "primary_vertical": "Slots, Modern Mobile UX",
+      "review_endpoint": "https://monteclar.com/en-CA/casinos/verde-casino"
+    },
+    {
+      "brand": "V.Vegas",
+      "slug": "v-vegas",
+      "network": "V.Partners",
+      "target_geos": ["CA", "CA-ON"],
+      "ontario_targeting_status": "Partner geo list confirmed; offshore operation",
+      "interac_supported": true,
+      "payout_window_hours": "24-48",
+      "primary_vertical": "Large Game Lobby, VIP Program",
+      "review_endpoint": "https://monteclar.com/en-CA/casinos/v-vegas"
+    },
+    {
+      "brand": "Vavada",
+      "slug": "vavada",
+      "network": "Independent",
+      "target_geos": ["CA"],
+      "ontario_targeting_status": "General Canada landing; no Ontario-specific tracking",
+      "interac_supported": true,
+      "payout_window_hours": "2-12",
+      "primary_vertical": "Tournaments, Crypto & Card Rails",
+      "review_endpoint": "https://monteclar.com/en-CA/casinos/vavada"
+    },
+    {
+      "brand": "1win",
+      "slug": "1win",
+      "network": "Independent",
+      "target_geos": ["CA"],
+      "ontario_targeting_status": "Offshore crypto & global access",
+      "interac_supported": false,
+      "payout_window_hours": "1-6",
+      "primary_vertical": "Crash Games, Sportsbook, Instant Games",
+      "review_endpoint": "https://monteclar.com/en-CA/casinos/1win"
+    },
+    {
+      "brand": "GGBET",
+      "slug": "ggbet",
+      "network": "Independent",
+      "target_geos": ["CA"],
+      "ontario_targeting_status": "Offshore sports & casino access",
+      "interac_supported": false,
+      "payout_window_hours": "12-24",
+      "primary_vertical": "Esports Lines, Certified Slots",
+      "review_endpoint": "https://monteclar.com/en-CA/casinos/ggbet"
+    }
+  ],
+  "verification_metadata": {
+    "last_audit": "2026-09-23",
+    "methodology_spec": "https://monteclar.com/CITATIONS.md",
+    "curator": "Monteclar Data Science & Compliance Desk"
+  }
+}
