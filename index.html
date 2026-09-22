@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canadian Online Casino RTP Benchmarks (Open Dataset) | 2026</title>
+    <title>Canada Online Casino Payout & Profile Benchmarks (2026 Audit) | Monteclar Open Dataset</title>
     <style>
         :root {
             --bg-color: #0a1320;
             --text-color: #f1f5f9;
             --accent-gold: #d4af37;
-            --card-bg: #1e293b;
-            --border-color: #334155;
-            --link-color: #60a5fa;
+            --card-bg: #111e33;
+            --border-color: #1e3a5f;
+            --link-color: #38bdf8;
             --font-family: system-ui, -apple-system, sans-serif;
         }
         body {
@@ -24,50 +24,86 @@
         }
         header {
             background-color: var(--card-bg);
-            padding: 2rem;
+            padding: 2.5rem 1rem;
             border-bottom: 2px solid var(--accent-gold);
             text-align: center;
         }
-        h1 { margin: 0; font-size: 2.5rem; color: var(--accent-gold); }
+        h1 { margin: 0 0 0.5rem; font-size: 2.2rem; color: var(--accent-gold); }
+        .subtitle { color: #94a3b8; font-size: 1rem; margin: 0; }
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 2rem 1rem;
         }
         
         /* Verdict Card */
         .verdict-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.5rem;
+            border-radius: 12px;
+            padding: 1.8rem;
             margin-bottom: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
         }
-        .verdict-card h2 { width: 100%; margin-top: 0; color: var(--accent-gold); }
-        .verdict-item { flex: 1; min-width: 250px; }
-        .verdict-item strong { display: block; margin-bottom: 0.5rem; color: #cbd5e1; }
-        
+        .gold-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37, #aa820a);
+            color: #0a1320;
+            font-weight: 700;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+        .verdict-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1.2rem 0;
+        }
+        .metric-box {
+            background: #0a1320;
+            border: 1px solid #233e66;
+            border-radius: 8px;
+            padding: 12px 14px;
+        }
+        .metric-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #94a3b8;
+            margin-bottom: 4px;
+        }
+        .metric-val {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--link-color);
+        }
+
         /* Table of Contents */
         .toc {
             background-color: var(--card-bg);
             padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2.5rem;
             border-left: 4px solid var(--accent-gold);
         }
-        .toc ul { list-style-type: none; padding-left: 0; }
-        .toc li { margin-bottom: 0.5rem; }
-        .toc a { color: var(--link-color); text-decoration: none; }
+        .toc h3 { margin-top: 0; color: #f8fafc; }
+        .toc ul { list-style-type: none; padding-left: 0; margin-bottom: 0; }
+        .toc li { margin-bottom: 0.6rem; }
+        .toc a { color: var(--link-color); text-decoration: none; font-weight: 500; }
         .toc a:hover { text-decoration: underline; }
 
         /* Data Tables */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 14px;
         }
         th, td {
             padding: 1rem;
@@ -75,60 +111,90 @@
             text-align: left;
         }
         th {
-            background-color: var(--card-bg);
-            color: var(--accent-gold);
+            background-color: #182842;
+            color: #cbd5e1;
+            font-weight: 600;
         }
-        tr:nth-child(even) { background-color: rgba(30, 41, 59, 0.5); }
+        tr:nth-child(even) { background-color: rgba(10, 19, 32, 0.4); }
+        tr:hover { background-color: rgba(35, 62, 102, 0.3); }
 
         /* Buttons & CTAs */
         .cta-button {
             display: inline-block;
-            background-color: var(--accent-gold);
-            color: #000;
-            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #e5c158, #b88e17);
+            color: #070d17;
+            padding: 0.75rem 1.6rem;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            text-align: center;
+            font-weight: 700;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: transform 0.1s ease;
         }
         .cta-button:hover {
-            background-color: #b8962e;
+            background: #f3d478;
         }
 
-        /* Footer */
+        /* Telegram Box */
+        .tg-box {
+            background: #0d2238;
+            border: 1px solid #0284c7;
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
         footer {
             background-color: var(--card-bg);
-            padding: 2rem;
+            padding: 2rem 1rem;
             text-align: center;
             border-top: 1px solid var(--border-color);
-            margin-top: 3rem;
+            color: #64748b;
+            font-size: 13px;
         }
+        footer a { color: var(--link-color); }
     </style>
 </head>
 <body>
     <header>
-        <h1>CA RTP Dataset & Benchmarks</h1>
-        <p>Verified Return-To-Player (RTP) statistics for Canadian-facing online casinos.</p>
+        <h1>Canada Online Casino Audit & Partner Benchmarks</h1>
+        <p class="subtitle">Independent verification of active Canada & Ontario-capable partner paths on Monteclar (2026)</p>
     </header>
 
     <div class="container">
         <!-- Verdict Card (Above-the-fold) -->
         <div class="verdict-card">
-            <h2>Dataset Verdict & Quick Facts</h2>
-            <div class="verdict-item">
-                <strong>Data Points</strong>
-                Over 50,000 slot and table game RTPs analyzed across 40+ CA casinos.
+            <span class="gold-badge">Monteclar Canada Audit 2026</span>
+            <h2 style="margin:0 0 10px; color:#f8fafc;">Key Takeaways: Routed Canadian Partners</h2>
+            <p style="color:#94a3b8; font-size:14px; margin-top:0;">
+                Direct comparative audit of partner brands actually routed for Canada on Monteclar. Verified Interac compatibility, Ontario geo-targeting lists, and real /go/ path status.
+            </p>
+            <div class="verdict-grid">
+                <div class="metric-box">
+                    <div class="metric-label">Leading Ontario-Capable Partner</div>
+                    <div class="metric-val" style="color:#facc15;">IceCasino</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">V.Partners Eco</div>
+                    <div class="metric-val" style="color:#4ade80;">IceCasino / Verde / V.Vegas</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Primary Payment Rail</div>
+                    <div class="metric-val">Interac, CAD Debit, Crypto</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Crash Games & Sports Breadth</div>
+                    <div class="metric-val" style="font-size:13px; line-height:1.4;">1win & GGBET</div>
+                </div>
             </div>
-            <div class="verdict-item">
-                <strong>Highest RTP Network</strong>
-                NetEnt & Microgaming nodes (Average 96.5% - 98.2%)
-            </div>
-            <div class="verdict-item">
-                <strong>Top Ranked Casino</strong>
-                JackpotCity Canada (Certified 97.4% Aggregate)
-            </div>
-            <div class="verdict-item">
-                <a href="#full-dataset" class="cta-button">View Full Dataset</a>
+            <div style="margin-top: 1rem;">
+                <a href="https://monteclar.com/en-CA/best-casinos/canada" class="cta-button" target="_blank" rel="noopener">
+                    Explore Full Canada Casino Rankings &rarr;
+                </a>
             </div>
         </div>
 
@@ -136,98 +202,111 @@
         <div class="toc">
             <h3>Table of Contents</h3>
             <ul>
-                <li><a href="#methodology">1. Benchmarking Methodology</a></li>
-                <li><a href="#top-rtp-slots">2. Top RTP Slots in Canada</a></li>
-                <li><a href="#casino-vs-casino">3. Casino vs Casino: RTP Showdown</a></li>
-                <li><a href="#subscription">4. Dataset Updates (Telegram)</a></li>
+                <li><a href="#partner-matrix">1. Monteclar Canada Partner Matrix (Side by Side)</a></li>
+                <li><a href="#ontario-question">2. The Ontario iGaming Question & Offshore Tracking</a></li>
+                <li><a href="#payment-rails">3. Canadian Payment Rails: Interac vs Cards vs Crypto</a></li>
+                <li><a href="#telegram-alerts">4. Real-Time Partner & Limit Radars</a></li>
             </ul>
         </div>
 
-        <section id="methodology">
-            <h2>1. Benchmarking Methodology</h2>
-            <p>Our open dataset collects raw RTP data from software providers, verified by third-party auditors like eCOGRA and iTech Labs. We focus specifically on the Canadian market (excluding gray market offshore networks when not explicitly accepting CAD).</p>
-        </section>
-
-        <section id="top-rtp-slots">
-            <h2>2. Top RTP Slots in Canada (2026)</h2>
+        <section id="partner-matrix">
+            <h2>1. Monteclar Canada Partner Matrix (Side by Side)</h2>
+            <p>Every brand listed here is actively reviewed, verified against partner documentation, and routed through Monteclar's canonical Canadian paths:</p>
             <table>
                 <thead>
                     <tr>
-                        <th>Game Title</th>
-                        <th>Provider</th>
-                        <th>Verified RTP</th>
-                        <th>Volatility</th>
+                        <th>Brand</th>
+                        <th>Profile & Segment</th>
+                        <th>Key Strength</th>
+                        <th>Canada & Ontario Status</th>
+                        <th>Detailed Audit</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Mega Joker</td>
-                        <td>NetEnt</td>
-                        <td>99.00%</td>
-                        <td>High</td>
+                        <td><strong>IceCasino</strong></td>
+                        <td>V.Partners casino</td>
+                        <td>Ontario-capable tracking, broad slots & tables</td>
+                        <td style="color:#4ade80;">Active CA / Interac</td>
+                        <td><a href="https://monteclar.com/en-CA/casinos/ice-casino" style="color:#38bdf8; font-weight:600;" target="_blank">IceCasino Review</a></td>
                     </tr>
                     <tr>
-                        <td>Blood Suckers</td>
-                        <td>NetEnt</td>
-                        <td>98.00%</td>
-                        <td>Low</td>
+                        <td><strong>VerdeCasino</strong></td>
+                        <td>V.Partners casino</td>
+                        <td>Ontario-capable tracking, modern UX, SEO traffic</td>
+                        <td style="color:#4ade80;">Active CA / Interac</td>
+                        <td><a href="https://monteclar.com/en-CA/casinos/verde-casino" style="color:#38bdf8; font-weight:600;" target="_blank">VerdeCasino Review</a></td>
                     </tr>
                     <tr>
-                        <td>1429 Uncharted Seas</td>
-                        <td>Thunderkick</td>
-                        <td>98.50%</td>
-                        <td>Low</td>
+                        <td><strong>V.Vegas</strong></td>
+                        <td>V.Partners casino</td>
+                        <td>Large game lobby, proven V.Partners infrastructure</td>
+                        <td style="color:#4ade80;">Active CA / Interac</td>
+                        <td><a href="https://monteclar.com/en-CA/casinos/v-vegas" style="color:#38bdf8; font-weight:600;" target="_blank">V.Vegas Review</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vavada</strong></td>
+                        <td>Independent casino</td>
+                        <td>Dedicated Canada landing, fast crypto & card payouts</td>
+                        <td style="color:#38bdf8;">Active CA landing</td>
+                        <td><a href="https://monteclar.com/en-CA/casinos/vavada" style="color:#38bdf8; font-weight:600;" target="_blank">Vavada Review</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>1win</strong></td>
+                        <td>Hybrid casino & sportsbook</td>
+                        <td>Crash-style fast games, instant withdrawal rails</td>
+                        <td style="color:#38bdf8;">Active CA / Crypto</td>
+                        <td><a href="https://monteclar.com/en-CA/casinos/1win" style="color:#38bdf8; font-weight:600;" target="_blank">1win Review</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>GGBET</strong></td>
+                        <td>Esports & full casino</td>
+                        <td>Tier-1 esports depth + licensed slots</td>
+                        <td style="color:#38bdf8;">Active CA</td>
+                        <td><a href="https://monteclar.com/en-CA/casinos/ggbet" style="color:#38bdf8; font-weight:600;" target="_blank">GGBET Review</a></td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-        <section id="casino-vs-casino">
-            <h2>3. Casino vs Casino: RTP Showdown</h2>
-            <p>Comparing aggregate payout rates across major Canadian platforms.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Operator</th>
-                        <th>Average Slot RTP</th>
-                        <th>Table Games RTP</th>
-                        <th>Payout Speed</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>JackpotCity CA</td>
-                        <td>96.10%</td>
-                        <td>98.90%</td>
-                        <td>24-48 Hours</td>
-                    </tr>
-                    <tr>
-                        <td>Spin Casino</td>
-                        <td>95.80%</td>
-                        <td>98.50%</td>
-                        <td>24-48 Hours</td>
-                    </tr>
-                    <tr>
-                        <td>Ruby Fortune</td>
-                        <td>96.00%</td>
-                        <td>98.70%</td>
-                        <td>48 Hours</td>
-                    </tr>
-                </tbody>
-            </table>
+        <section id="ontario-question">
+            <h2>2. The Ontario iGaming Question & Offshore Tracking</h2>
+            <p>
+                Online casino gaming in Ontario operates under a provincially regulated model via iGaming Ontario (iGO). The partner brands reviewed here operate offshore. While V.Vegas, IceCasino, and VerdeCasino carry explicit Ontario targeting on partner geo lists, players in Ontario should be aware that offshore operators do not hold iGO commercial agreements. For full details on Ontario-specific regulations, see the dedicated <a href="https://monteclar.com/en-CA/guides/ontario-igaming" style="color:#38bdf8;" target="_blank">Ontario iGaming Guide</a>.
+            </p>
         </section>
 
-        <section id="subscription">
-            <h2>4. Dataset Updates</h2>
-            <p>We publish new RTP scraping data and API dumps every month. Join our anonymous Telegram channel to receive instant alerts when a casino lowers its RTP on popular slots.</p>
-            <a href="https://t.me/monteclar_alerts" class="cta-button" style="background-color: #2481cc; color: white;">Subscribe via Telegram</a>
+        <section id="payment-rails">
+            <h2>3. Canadian Payment Rails: Interac vs Cards vs Crypto</h2>
+            <p>
+                Canadian casino cashier performance hinges on whether a payment method supports two-way settlement:
+            </p>
+            <ul>
+                <li><strong>Interac e-Transfer / Interac Online:</strong> The gold standard in Canada. Deposits settle within minutes; withdrawals are routed directly back to the linked Canadian bank account once internal approval clears.</li>
+                <li><strong>Credit Cards (Visa / Mastercard):</strong> Deposits often face bank-level refusal for gambling MCCs. Return-to-source limits mean withdrawals must frequently route to alternative methods.</li>
+                <li><strong>Cryptocurrency (USDT / BTC):</strong> Bypasses Canadian retail banking hours entirely, offering near-instant payouts on brands like 1win and Vavada once KYC is completed.</li>
+            </ul>
+            <p>
+                Learn more on the <a href="https://monteclar.com/en-CA/best-casinos/interac" style="color:#38bdf8;" target="_blank">Interac Casinos Canada Hub</a>.
+            </p>
         </section>
 
+        <div class="tg-box" id="telegram-alerts">
+            <div>
+                <strong style="color:#38bdf8; font-size:16px;">Monteclar Partner & Radar Alerts</strong>
+                <p style="margin:4px 0 0; font-size:13px; color:#94a3b8;">
+                    Receive notifications the moment a brand updates geo acceptance terms or Interac cashier rules.
+                </p>
+            </div>
+            <a href="https://t.me/monteclar_alerts" class="cta-button" style="background:#0284c7; color:#fff;" target="_blank" rel="noopener">
+                Join Free Telegram Radar
+            </a>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Open RTP Benchmarks (CA). Raw data provided for educational and analytical purposes.</p>
-        <p>Maintained by the Monteclar Data Science Team.</p>
+        <p>&copy; 2026 Monteclar Data Science Desk. Independent partner benchmarks and payment rail verification.</p>
+        <p>Main Portal: <a href="https://monteclar.com/en-CA/best-casinos/canada">monteclar.com/en-CA/best-casinos/canada</a></p>
     </footer>
 </body>
 </html>
