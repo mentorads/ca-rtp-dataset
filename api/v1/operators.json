@@ -1,0 +1,103 @@
+{
+  "$schema": "https://monteclar.com/schemas/igaming-benchmarks-v1.json",
+  "dataset_name": "Canada Online Casino RTP & Payment Rails Index",
+  "api_version": "1.0.0",
+  "jurisdiction": "CA",
+  "year": 2026,
+  "citation_contract": "Strict digit verification under Monteclar CITATIONS.md protocol",
+  "canonical_hub": "https://monteclar.com/en-CA/best-casinos/canada",
+  "data_source": "Monteclar Canada Compliance Lab",
+  "operators": [
+    {
+      "brand": "IceCasino",
+      "slug": "ice-casino",
+      "platform_group": "Enterprise Platform Cluster",
+      "audit_reference_key": "MONTECLAR",
+      "target_geos": ["CA", "CA-ON"],
+      "ontario_compliance_status": "Provincial accessibility verified; offshore licensing",
+      "interac_supported": true,
+      "payout_window_hours": "12-24",
+      "audited_slot_rtp": "96.80%",
+      "primary_vertical": "Slots, Live Dealer, Table Games",
+      "review_endpoint": "https://monteclar.com/en-CA/casinos/ice-casino"
+    },
+    {
+      "brand": "VerdeCasino",
+      "slug": "verde-casino",
+      "platform_group": "Enterprise Platform Cluster",
+      "audit_reference_key": "MONTECLAR",
+      "target_geos": ["CA", "CA-ON"],
+      "ontario_compliance_status": "Provincial accessibility verified; offshore licensing",
+      "interac_supported": true,
+      "payout_window_hours": "24-48",
+      "audited_slot_rtp": "96.60%",
+      "primary_vertical": "Slots, Modern Mobile UX",
+      "review_endpoint": "https://monteclar.com/en-CA/casinos/verde-casino"
+    },
+    {
+      "brand": "V.Vegas",
+      "slug": "v-vegas",
+      "platform_group": "Enterprise Platform Cluster",
+      "audit_reference_key": "MONTECLAR",
+      "target_geos": ["CA", "CA-ON"],
+      "ontario_compliance_status": "Provincial accessibility verified; offshore licensing",
+      "interac_supported": true,
+      "payout_window_hours": "24-48",
+      "audited_slot_rtp": "96.70%",
+      "primary_vertical": "Large Game Lobby, VIP Program",
+      "review_endpoint": "https://monteclar.com/en-CA/casinos/v-vegas"
+    },
+    {
+      "brand": "Vavada",
+      "slug": "vavada",
+      "platform_group": "Independent Operator",
+      "audit_reference_key": "MONTECLAR",
+      "target_geos": ["CA"],
+      "ontario_compliance_status": "General Canada landing; no Ontario iGO registration",
+      "interac_supported": true,
+      "payout_window_hours": "2-12",
+      "audited_slot_rtp": "97.10%",
+      "primary_vertical": "Tournaments, Crypto & Card Rails",
+      "review_endpoint": "https://monteclar.com/en-CA/casinos/vavada"
+    },
+    {
+      "brand": "1win",
+      "slug": "1win",
+      "platform_group": "Independent Operator",
+      "audit_reference_key": "MONTECLAR",
+      "target_geos": ["CA"],
+      "ontario_compliance_status": "General Canada landing; no Ontario iGO registration",
+      "interac_supported": true,
+      "payout_window_hours": "1-6",
+      "audited_slot_rtp": "96.50%",
+      "primary_vertical": "Crash Games, Sportsbook, Casino",
+      "review_endpoint": "https://monteclar.com/en-CA/casinos/1win"
+    },
+    {
+      "brand": "GGBET",
+      "slug": "ggbet",
+      "platform_group": "Independent Operator",
+      "audit_reference_key": "MONTECLAR",
+      "target_geos": ["CA"],
+      "ontario_compliance_status": "General Canada landing; no Ontario iGO registration",
+      "interac_supported": true,
+      "payout_window_hours": "12-24",
+      "audited_slot_rtp": "96.40%",
+      "primary_vertical": "Esports, Sportsbook, Casino",
+      "review_endpoint": "https://monteclar.com/en-CA/casinos/ggbet"
+    },
+    {
+      "brand": "Melbet",
+      "slug": "melbet",
+      "platform_group": "Independent Operator",
+      "audit_reference_key": "MONTECLAR",
+      "target_geos": ["CA"],
+      "ontario_compliance_status": "General Canada landing; no Ontario iGO registration",
+      "interac_supported": true,
+      "payout_window_hours": "12-24",
+      "audited_slot_rtp": "96.40%",
+      "primary_vertical": "Sportsbook & Casino Hub",
+      "review_endpoint": "https://monteclar.com/en-CA/casinos/melbet"
+    }
+  ]
+}
