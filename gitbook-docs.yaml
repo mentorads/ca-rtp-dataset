@@ -5,6 +5,7 @@ site:
     - type: space
       key: benchmarks
       title: Canadian iGaming RTP Benchmarks
+      default: true
       path: benchmarks
       content:
         directory: ./docs
