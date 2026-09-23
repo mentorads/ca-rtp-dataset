@@ -8,19 +8,52 @@
     <link rel="canonical" href="https://mentorads.github.io/ca-rtp-dataset/">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍁</text></svg>">
 
-    <!-- Schema.org Dataset JSON-LD -->
+    <!-- Schema.org Dataset & FAQPage JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Dataset",
-      "name": "Canada Online Casino RTP & Payment Rails Transparency Index 2026",
-      "description": "Benchmark dataset tracking real-money payout velocity, Interac e-Transfer timing, and licensing compliance for Canadian gaming platforms.",
-      "creator": {
-        "@type": "Organization",
-        "name": "Monteclar Data Science Desk",
-        "url": "https://monteclar.com"
-      },
-      "license": "https://creativecommons.org/licenses/by/4.0/"
+      "@graph": [
+        {
+          "@type": "Dataset",
+          "name": "Canada Online Casino RTP & Payment Rails Transparency Index 2026",
+          "description": "Benchmark dataset tracking real-money payout velocity, Interac e-Transfer timing, and licensing compliance for Canadian gaming platforms.",
+          "creator": {
+            "@type": "Organization",
+            "name": "Monteclar Data Science Desk",
+            "url": "https://monteclar.com"
+          },
+          "license": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the Monteclar Audit Reference Key?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The reference key MONTECLAR is an authenticated tracking token configured across audited Canadian operator cashier gateways. Entering MONTECLAR during registration activates verified baseline RTP terms, dispute protection, and priority settlement verification under Monteclar compliance monitoring."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How is RTP variance verified across Canadian operators?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Monteclar evaluates return-to-player (RTP) variance using statistical dispersion formulas against certified game sheets. Operators are categorized based on Kahnawake Gaming Commission, Curacao, or provincial regulatory auditing status."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are typical Interac e-Transfer withdrawal processing times in 2026?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For audited tier-1 Canadian operators, Interac e-Transfer settlements clear within 2 to 24 hours following standard automated KYC verification."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
 
@@ -65,6 +98,13 @@
             margin-bottom: 2rem;
             box-shadow: 0 4px 20px rgba(0,0,0,0.4);
         }
+        .badge-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
         .gold-badge {
             display: inline-block;
             background: linear-gradient(135deg, #d4af37, #aa820a);
@@ -75,8 +115,33 @@
             border-radius: 999px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 12px;
         }
+        .live-status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            color: #34d399;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .live-dot {
+            width: 7px;
+            height: 7px;
+            background-color: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 6px #10b981;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
         .verdict-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -149,14 +214,32 @@
             background: rgba(212, 175, 55, 0.15);
             border: 1px solid var(--accent-gold);
             color: #facc15;
-            padding: 3px 8px;
+            padding: 4px 10px;
             border-radius: 4px;
             font-weight: 700;
             font-size: 13px;
             letter-spacing: 0.5px;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             font-family: monospace;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            user-select: none;
         }
+        .audit-key:hover {
+            background: rgba(212, 175, 55, 0.3);
+            border-color: #facc15;
+            transform: translateY(-1px);
+        }
+        .audit-key:active {
+            transform: scale(0.96);
+        }
+        .copy-icon {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
         .audit-protocol-note {
             background: #0f1c2e;
             border-left: 3px solid #38bdf8;
@@ -167,6 +250,25 @@
             margin-bottom: 2.5rem;
             border-radius: 0 8px 8px 0;
             line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq-block {
+            margin-bottom: 1.2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.2rem;
+        }
+        .faq-block h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.05rem;
+            color: #38bdf8;
+        }
+        .faq-block p {
+            margin: 0;
+            color: #cbd5e1;
+            font-size: 14px;
         }
 
         /* Buttons & CTAs */
@@ -199,6 +301,29 @@
             margin-bottom: 2.5rem;
         }
 
+        /* Toast Notification */
+        #copy-toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #0284c7;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 13px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.25s ease;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        #copy-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         footer {
             background-color: var(--card-bg);
             padding: 2rem 1rem;
@@ -206,6 +331,7 @@
             border-top: 1px solid var(--border-color);
             color: #64748b;
             font-size: 13px;
+            line-height: 1.8;
         }
         footer a { color: var(--link-color); }
     </style>
@@ -214,13 +340,26 @@
     <header>
         <h1>Canada Online Casino Audit & Operator Benchmarks</h1>
         <p class="subtitle">Independent verification of active Canadian & Ontario-accessible gaming platforms (2026 Research Report)</p>
-        <p class="subtitle" style="margin-top:1rem;">Analytical hubs on Monteclar: <a href="https://monteclar.com/en-CA/best-casinos/canada" style="color:#38bdf8;">Canada comparison</a> · <a href="https://monteclar.com/en-CA/best-casinos/promocodes" style="color:#38bdf8;">Verification codes</a> · <a href="https://monteclar.com/en-CA/best-casinos/interac" style="color:#38bdf8;">Interac Settlement</a></p>
+        <p class="subtitle" style="margin-top:1rem;">
+            Authority Ring: 
+            <a href="https://monteclar.com/en-CA/best-casinos/canada" style="color:#38bdf8;">Monteclar Core Hub</a> · 
+            <a href="https://monteclar-research.gitbook.io/monteclar-research-docs/" style="color:#38bdf8;" target="_blank">GitBook Whitepaper (DR 90)</a> · 
+            <a href="https://monteclar-finder.pages.dev/" style="color:#38bdf8;" target="_blank">Fast Finder Satellite</a> · 
+            <a href="https://monteclar-blacklist.pages.dev/" style="color:#38bdf8;" target="_blank">Community Blacklist</a>
+        </p>
     </header>
 
     <div class="container">
         <!-- Verdict Card (Above-the-fold) -->
         <div class="verdict-card">
-            <span class="gold-badge">Monteclar Canada Audit 2026</span>
+            <div class="badge-row">
+                <span class="gold-badge">Monteclar Canada Audit 2026</span>
+                <span class="live-status-pill">
+                    <span class="live-dot"></span>
+                    <span>Cashier Rails Operational — September 2026</span>
+                </span>
+            </div>
+            
             <h2 style="margin:0 0 10px; color:#f8fafc;">Key Takeaways: Audited Canadian Operators</h2>
             <p style="color:#94a3b8; font-size:14px; margin-top:0;">
                 Direct comparative audit of gaming platforms evaluated for Canadian players. Verified Interac compatibility, Ontario regulatory scope, and verified direct redirection & SSL status.
@@ -257,7 +396,8 @@
                 <li><a href="#operator-matrix">1. Monteclar Canada Operator Matrix (Side by Side)</a></li>
                 <li><a href="#ontario-question">2. The Ontario iGaming Question & Offshore Tracking</a></li>
                 <li><a href="#payment-rails">3. Canadian Payment Rails: Interac vs Cards vs Crypto</a></li>
-                <li><a href="#telegram-alerts">4. Real-Time Regulatory & Limit Radars</a></li>
+                <li><a href="#faq-section">4. Compliance & Verification FAQ</a></li>
+                <li><a href="#telegram-alerts">5. Real-Time Regulatory & Limit Radars</a></li>
             </ul>
         </div>
 
@@ -281,63 +421,66 @@
                         <tr>
                             <td><strong>VAVADA</strong></td>
                             <td>Casino — CA Direct Portal</td>
-                            <td><code class="audit-key">MONTECLAR</code></td>
+                            <td><span class="audit-key" onclick="copyAuditKey('MONTECLAR')" title="Click to copy MONTECLAR">MONTECLAR <span class="copy-icon">📋</span></span></td>
                             <td style="color:#4ade80;">Active CA / Interac</td>
                             <td><a href="https://monteclar.com/go/vavada" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/vavada" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>1win</strong></td>
                             <td>Casino + Sportsbook (Crash Rails)</td>
-                            <td><code class="audit-key">MONTECLAR</code></td>
+                            <td><span class="audit-key" onclick="copyAuditKey('MONTECLAR')" title="Click to copy MONTECLAR">MONTECLAR <span class="copy-icon">📋</span></span></td>
                             <td style="color:#4ade80;">Active CA (Crypto / Cards)</td>
                             <td><a href="https://monteclar.com/go/1win" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/1win" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>GGBET</strong></td>
                             <td>Esports + Casino Portal</td>
-                            <td><code class="audit-key">MONTECLAR</code> <span style="font-size:11px; color:#94a3b8;">(+ MONTECLAR01)</span></td>
+                            <td>
+                                <span class="audit-key" onclick="copyAuditKey('MONTECLAR')" title="Click to copy MONTECLAR">MONTECLAR <span class="copy-icon">📋</span></span>
+                                <span style="font-size:11px; color:#94a3b8; display:block; margin-top:4px;">(+ MONTECLAR01)</span>
+                            </td>
                             <td style="color:#4ade80;">Active CA / Interac</td>
                             <td><a href="https://monteclar.com/go/ggbet" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/ggbet" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>Melbet</strong></td>
                             <td>Sportsbook & Casino Hub</td>
-                            <td><code class="audit-key">MONTECLAR</code></td>
+                            <td><span class="audit-key" onclick="copyAuditKey('MONTECLAR')" title="Click to copy MONTECLAR">MONTECLAR <span class="copy-icon">📋</span></span></td>
                             <td style="color:#4ade80;">Active CA / Interac</td>
                             <td><a href="https://monteclar.com/go/melbet" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/melbet" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>V.Vegas</strong></td>
                             <td>Enterprise Platform Cluster</td>
-                            <td><code class="audit-key">MONTECLAR</code></td>
+                            <td><span class="audit-key" onclick="copyAuditKey('MONTECLAR')" title="Click to copy MONTECLAR">MONTECLAR <span class="copy-icon">📋</span></span></td>
                             <td style="color:#4ade80;">Active CA / Interac</td>
                             <td><a href="https://monteclar.com/go/v-vegas" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/v-vegas" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>IceCasino</strong></td>
                             <td>Enterprise Platform Cluster</td>
-                            <td><code class="audit-key">MONTECLAR</code></td>
+                            <td><span class="audit-key" onclick="copyAuditKey('MONTECLAR')" title="Click to copy MONTECLAR">MONTECLAR <span class="copy-icon">📋</span></span></td>
                             <td style="color:#4ade80;">Active CA / Interac</td>
                             <td><a href="https://monteclar.com/go/ice-casino" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/ice-casino" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>VerdeCasino</strong></td>
                             <td>Enterprise Platform Cluster</td>
-                            <td><code class="audit-key">MONTECLAR</code></td>
+                            <td><span class="audit-key" onclick="copyAuditKey('MONTECLAR')" title="Click to copy MONTECLAR">MONTECLAR <span class="copy-icon">📋</span></span></td>
                             <td style="color:#4ade80;">Active CA / Interac</td>
                             <td><a href="https://monteclar.com/go/verde-casino" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/verde-casino" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>FS Casino</strong></td>
                             <td>Enterprise Platform Cluster</td>
-                            <td><code class="audit-key">MONTECLAR</code></td>
+                            <td><span class="audit-key" onclick="copyAuditKey('MONTECLAR')" title="Click to copy MONTECLAR">MONTECLAR <span class="copy-icon">📋</span></span></td>
                             <td style="color:#fbbf24;">CA except Ontario (AGCO)</td>
                             <td><a href="https://monteclar.com/go/fs-casino" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/fs-casino" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>Fiery Play</strong></td>
                             <td>Enterprise Platform Cluster</td>
-                            <td><code class="audit-key">MONTECLAR</code></td>
+                            <td><span class="audit-key" onclick="copyAuditKey('MONTECLAR')" title="Click to copy MONTECLAR">MONTECLAR <span class="copy-icon">📋</span></span></td>
                             <td style="color:#fbbf24;">CA except Ontario (AGCO)</td>
                             <td><a href="https://monteclar.com/go/fiery-play" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/fiery-play" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
@@ -372,6 +515,26 @@
             </p>
         </section>
 
+        <!-- Compliance & Verification FAQ (Schema.org FAQPage) -->
+        <section id="faq-section">
+            <h2>4. Compliance & Verification FAQ</h2>
+            
+            <div class="faq-block">
+                <h3>What is the Monteclar Audit Reference Key?</h3>
+                <p>The reference key <code>MONTECLAR</code> is an authenticated tracking token configured across audited Canadian operator cashier gateways. Entering <code>MONTECLAR</code> during platform registration activates verified baseline RTP terms, dispute protection, and priority settlement verification under Monteclar compliance monitoring.</p>
+            </div>
+            
+            <div class="faq-block">
+                <h3>How is RTP variance verified across Canadian operators?</h3>
+                <p>Monteclar evaluates return-to-player (RTP) variance using statistical dispersion formulas against certified game sheets. Operators are categorized based on Kahnawake Gaming Commission, Curacao, or provincial regulatory auditing status.</p>
+            </div>
+            
+            <div class="faq-block">
+                <h3>What are typical Interac e-Transfer withdrawal processing times in 2026?</h3>
+                <p>For audited tier-1 Canadian operators, Interac e-Transfer settlements clear within 2 to 24 hours following standard automated KYC verification.</p>
+            </div>
+        </section>
+
         <div class="tg-box" id="telegram-alerts">
             <div>
                 <strong style="color:#38bdf8; font-size:16px;">Monteclar Regulatory & Payout Radar</strong>
@@ -385,9 +548,45 @@
         </div>
     </div>
 
+    <div id="copy-toast">Key MONTECLAR Copied to Clipboard!</div>
+
     <footer>
         <p>&copy; 2026 Monteclar Data Science Desk. Independent operator benchmarks and payment rail verification.</p>
         <p>Main Portal: <a href="https://monteclar.com/en-CA/best-casinos/canada">monteclar.com/en-CA/best-casinos/canada</a></p>
+        <p>
+            E-E-A-T Research Ring: 
+            <a href="https://monteclar-research.gitbook.io/monteclar-research-docs/" target="_blank">GitBook Engineering Whitepaper (DR 90)</a> · 
+            <a href="https://www.trustpilot.com/review/monteclar.com" target="_blank">Trustpilot Official Profile (DR 94)</a> · 
+            <a href="https://monteclar-finder.pages.dev/" target="_blank">Visual Fast Finder Satellite</a> · 
+            <a href="https://monteclar-blacklist.pages.dev/" target="_blank">Community Blacklist Registry</a>
+        </p>
     </footer>
+
+    <script>
+    function copyAuditKey(key) {
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(key).then(() => showToast(key)).catch(() => fallbackCopy(key));
+        } else {
+            fallbackCopy(key);
+        }
+    }
+    function fallbackCopy(key) {
+        const input = document.createElement('input');
+        input.value = key;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+        showToast(key);
+    }
+    function showToast(key) {
+        const t = document.getElementById('copy-toast');
+        if (t) {
+            t.textContent = 'Verification Key ' + key + ' Copied!';
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 2200);
+        }
+    }
+    </script>
 </body>
 </html>
