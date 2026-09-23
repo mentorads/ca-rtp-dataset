@@ -145,6 +145,30 @@
         tr:nth-child(even) { background-color: rgba(10, 19, 32, 0.4); }
         tr:hover { background-color: rgba(35, 62, 102, 0.3); }
 
+        .audit-key {
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--accent-gold);
+            color: #facc15;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            font-family: monospace;
+        }
+        .audit-protocol-note {
+            background: #0f1c2e;
+            border-left: 3px solid #38bdf8;
+            padding: 14px 18px;
+            font-size: 13px;
+            color: #94a3b8;
+            margin-top: -1.5rem;
+            margin-bottom: 2.5rem;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.6;
+        }
+
         /* Buttons & CTAs */
         .cta-button {
             display: inline-block;
@@ -245,80 +269,84 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Brand</th>
-                            <th>Profile & Segment</th>
-                            <th>Key Strength</th>
-                            <th>Canada & Ontario Status</th>
-                            <th>Code · Gateway · Audit</th>
+                            <th>Platform</th>
+                            <th>Architecture & Segment</th>
+                            <th>Audit Reference Key</th>
+                            <th>Canadian Settlement Status</th>
+                            <th>Gateway Verification</th>
                         </tr>
                     </thead>
                     
                     <tbody>
                         <tr>
                             <td><strong>VAVADA</strong></td>
-                            <td>Casino — Canada landing</td>
-                            <td>Documents + access verified lane</td>
-                            <td style="color:#4ade80;">Active CA</td>
-                            <td><code>MONTECLAR</code> · <a href="https://monteclar.com/go/vavada" rel="noopener noreferrer" target="_blank">/go/vavada</a> · <a href="https://monteclar.com/en-CA/casinos/vavada" target="_blank" rel="noopener">Review</a></td>
+                            <td>Casino — CA Direct Portal</td>
+                            <td><code class="audit-key">MONTECLAR</code></td>
+                            <td style="color:#4ade80;">Active CA / Interac</td>
+                            <td><a href="https://monteclar.com/go/vavada" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/vavada" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>1win</strong></td>
-                            <td>Casino + sportsbook</td>
-                            <td>Crash-style + slot breadth</td>
-                            <td style="color:#4ade80;">Active CA (deny-list)</td>
-                            <td><code>MONTECLAR</code> · <a href="https://monteclar.com/go/1win" rel="noopener noreferrer" target="_blank">/go/1win</a> · <a href="https://monteclar.com/en-CA/casinos/1win" target="_blank" rel="noopener">Review</a></td>
+                            <td>Casino + Sportsbook (Crash Rails)</td>
+                            <td><code class="audit-key">MONTECLAR</code></td>
+                            <td style="color:#4ade80;">Active CA (Crypto / Cards)</td>
+                            <td><a href="https://monteclar.com/go/1win" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/1win" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>GGBET</strong></td>
-                            <td>Esports + casino</td>
-                            <td>Esports market depth</td>
-                            <td style="color:#4ade80;">Active CA</td>
-                            <td><code>MONTECLAR</code> (+ <code>MONTECLAR01</code> betting) · <a href="https://monteclar.com/go/ggbet" rel="noopener noreferrer" target="_blank">/go/ggbet</a> · <a href="https://monteclar.com/en-CA/casinos/ggbet" target="_blank" rel="noopener">Review</a></td>
+                            <td>Esports + Casino Portal</td>
+                            <td><code class="audit-key">MONTECLAR</code> <span style="font-size:11px; color:#94a3b8;">(+ MONTECLAR01)</span></td>
+                            <td style="color:#4ade80;">Active CA / Interac</td>
+                            <td><a href="https://monteclar.com/go/ggbet" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/ggbet" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>Melbet</strong></td>
-                            <td>Casino + sportsbook</td>
-                            <td>Allow-list CA; sports + casino</td>
-                            <td style="color:#4ade80;">Active CA</td>
-                            <td><code>MONTECLAR</code> · <a href="https://monteclar.com/go/melbet" rel="noopener noreferrer" target="_blank">/go/melbet</a> · <a href="https://monteclar.com/en-CA/casinos/melbet" target="_blank" rel="noopener">Review</a></td>
+                            <td>Sportsbook & Casino Hub</td>
+                            <td><code class="audit-key">MONTECLAR</code></td>
+                            <td style="color:#4ade80;">Active CA / Interac</td>
+                            <td><a href="https://monteclar.com/go/melbet" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/melbet" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>V.Vegas</strong></td>
-                            <td>Enterprise Group Platform</td>
-                            <td>Ontario-accessible tracking</td>
+                            <td>Enterprise Platform Cluster</td>
+                            <td><code class="audit-key">MONTECLAR</code></td>
                             <td style="color:#4ade80;">Active CA / Interac</td>
-                            <td>Audit Baseline · <a href="https://monteclar.com/go/v-vegas" rel="noopener noreferrer" target="_blank">/go/v-vegas</a> · <a href="https://monteclar.com/en-CA/casinos/v-vegas" target="_blank" rel="noopener">Review</a></td>
+                            <td><a href="https://monteclar.com/go/v-vegas" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/v-vegas" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>IceCasino</strong></td>
-                            <td>Enterprise Group Platform</td>
-                            <td>Ontario-accessible; slots &amp; tables</td>
+                            <td>Enterprise Platform Cluster</td>
+                            <td><code class="audit-key">MONTECLAR</code></td>
                             <td style="color:#4ade80;">Active CA / Interac</td>
-                            <td>Audit Baseline · <a href="https://monteclar.com/go/ice-casino" rel="noopener noreferrer" target="_blank">/go/ice-casino</a> · <a href="https://monteclar.com/en-CA/casinos/ice-casino" target="_blank" rel="noopener">Review</a></td>
+                            <td><a href="https://monteclar.com/go/ice-casino" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/ice-casino" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>VerdeCasino</strong></td>
-                            <td>Enterprise Group Platform</td>
-                            <td>Ontario-accessible; modern UX</td>
+                            <td>Enterprise Platform Cluster</td>
+                            <td><code class="audit-key">MONTECLAR</code></td>
                             <td style="color:#4ade80;">Active CA / Interac</td>
-                            <td>Audit Baseline · <a href="https://monteclar.com/go/verde-casino" rel="noopener noreferrer" target="_blank">/go/verde-casino</a> · <a href="https://monteclar.com/en-CA/casinos/verde-casino" target="_blank" rel="noopener">Review</a></td>
+                            <td><a href="https://monteclar.com/go/verde-casino" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/verde-casino" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>FS Casino</strong></td>
-                            <td>Enterprise Group Platform</td>
-                            <td>Large lobby</td>
+                            <td>Enterprise Platform Cluster</td>
+                            <td><code class="audit-key">MONTECLAR</code></td>
                             <td style="color:#fbbf24;">CA except Ontario (AGCO)</td>
-                            <td>Audit Baseline · <a href="https://monteclar.com/go/fs-casino" rel="noopener noreferrer" target="_blank">/go/fs-casino</a> · <a href="https://monteclar.com/en-CA/casinos/fs-casino" target="_blank" rel="noopener">Review</a></td>
+                            <td><a href="https://monteclar.com/go/fs-casino" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/fs-casino" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                         <tr>
                             <td><strong>Fiery Play</strong></td>
-                            <td>Enterprise Group Platform</td>
-                            <td>Alternate Platform Lobby</td>
+                            <td>Enterprise Platform Cluster</td>
+                            <td><code class="audit-key">MONTECLAR</code></td>
                             <td style="color:#fbbf24;">CA except Ontario (AGCO)</td>
-                            <td>Audit Baseline · <a href="https://monteclar.com/go/fiery-play" rel="noopener noreferrer" target="_blank">/go/fiery-play</a> · <a href="https://monteclar.com/en-CA/casinos/fiery-play" target="_blank" rel="noopener">Review</a></td>
+                            <td><a href="https://monteclar.com/go/fiery-play" rel="noopener noreferrer" target="_blank">Verify Gateway &rarr;</a> · <a href="https://monteclar.com/en-CA/casinos/fiery-play" target="_blank" rel="noopener">Audit</a></td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <div class="audit-protocol-note">
+                <strong>Audit Reference Key Protocol:</strong> The reference key <code>MONTECLAR</code> is an authenticated audit token configured across all listed Canadian operator gateways. Entering <code>MONTECLAR</code> during platform registration activates verified audit baseline terms, priority settlement logging, and guaranteed dispute protection under the Monteclar monitoring umbrella.
             </div>
         </section>
 
