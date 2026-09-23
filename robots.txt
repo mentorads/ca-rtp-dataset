@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mentorads.github.io/ca-rtp-dataset/sitemap.xml
