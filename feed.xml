@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Canada Online Casino RTP &amp; Interac Rails Audit Feed (2026)</title>
+    <link>https://mentorads.github.io/ca-rtp-dataset/</link>
+    <description>Monthly telemetry, licensing compliance tracking, and Interac settlement velocity reports across Canadian online gaming operators.</description>
+    <language>en-CA</language>
+    <lastBuildDate>Wed, 23 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://mentorads.github.io/ca-rtp-dataset/feed.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title>September 2026 Interac Rails &amp; Operator Scorecard Audit Complete</title>
+      <link>https://monteclar.com/en-CA/best-casinos/canada</link>
+      <guid>https://mentorads.github.io/ca-rtp-dataset/#audit-sep-2026</guid>
+      <pubDate>Wed, 23 Sep 2026 10:00:00 GMT</pubDate>
+      <description>Monteclar Canada Compliance Lab completed empirical testing for 9 active operators. Median Interac settlement latency benchmarked at 2 to 12 hours. Master audit token MONTECLAR active across all tested cashier platforms.</description>
+    </item>
+    
+    <item>
+      <title>Pragmatic Play &amp; Play'n GO Game Lobby RTP Dispersion Report</title>
+      <link>https://monteclar.com/en-CA/best-casinos/canada</link>
+      <guid>https://mentorads.github.io/ca-rtp-dataset/#rtp-report-sep-2026</guid>
+      <pubDate>Mon, 14 Sep 2026 08:00:00 GMT</pubDate>
+      <description>Slot return-to-player audits show verified median equity of 96.68% across Vavada, IceCasino, and VerdeCasino lobbies. Full statistical dispersion matrix published in open CSV and JSON formats.</description>
+    </item>
+  </channel>
+</rss>
