@@ -27,11 +27,11 @@ Access the zero-JS visual dataset with above-the-fold verdict cards and interact
 
 ## 🔍 Audited Canadian Operators (2026 Registry)
 
-| Brand | Network | Target Geos | Interac Rail | Payout Window | Canonical Audit |
+| Brand | Platform Group | Target Geos | Interac Rail | Payout Window | Canonical Audit |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **IceCasino** | V.Partners | CA, CA-ON | Verified | 12–24h | [IceCasino Review](https://monteclar.com/en-CA/casinos/ice-casino) |
-| **VerdeCasino** | V.Partners | CA, CA-ON | Verified | 24–48h | [VerdeCasino Review](https://monteclar.com/en-CA/casinos/verde-casino) |
-| **V.Vegas** | V.Partners | CA, CA-ON | Verified | 24–48h | [V.Vegas Review](https://monteclar.com/en-CA/casinos/v-vegas) |
+| **IceCasino** | Enterprise Cluster | CA, CA-ON | Verified | 12–24h | [IceCasino Review](https://monteclar.com/en-CA/casinos/ice-casino) |
+| **VerdeCasino** | Enterprise Cluster | CA, CA-ON | Verified | 24–48h | [VerdeCasino Review](https://monteclar.com/en-CA/casinos/verde-casino) |
+| **V.Vegas** | Enterprise Cluster | CA, CA-ON | Verified | 24–48h | [V.Vegas Review](https://monteclar.com/en-CA/casinos/v-vegas) |
 | **Vavada** | Independent | CA | Verified | 2–12h | [Vavada Review](https://monteclar.com/en-CA/casinos/vavada) |
 | **1win** | Independent | CA | Crypto / Card | 1–6h | [1win Review](https://monteclar.com/en-CA/casinos/1win) |
 | **GGBET** | Independent | CA | Crypto / Card | 12–24h | [GGBET Review](https://monteclar.com/en-CA/casinos/ggbet) |
